@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Your Property or Vehicle | Prime Property Solutions</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7f6;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b3d2e;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #d4a017;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: #0b3d2e;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 18px;
+    }
+
+    .form-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      color: #0b3d2e;
+      border-bottom: 2px solid #d4a017;
+      padding-bottom: 8px;
+      margin: 25px 0 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .row > div {
+      flex: 1;
+    }
+
+    .duration-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .duration {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .duration:hover {
+      border-color: #d4a017;
+    }
+
+    .duration strong {
+      display: block;
+      color: #0b3d2e;
+      margin-bottom: 5px;
+    }
+
+    .notice {
+      background: #fff8df;
+      border-left: 4px solid #d4a017;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #0b3d2e;
+      color: white;
+      border: none;
+      padding: 15px;
+      margin-top: 25px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #09533d;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #0b3d2e;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .duration-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Prime Property Solutions</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="listings.html">Listings</a>
+    <a href="list-property.html">List With Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>List Your Property or Vehicle</h2>
+  <p>
+    Advertise your property, land or vehicle with Prime Property Solutions
+    and reach potential buyers and renters.
+  </p>
+</section>
+
+<div class="container">
+
+  <div class="form-box">
+
+    <h2 class="section-title">1. What Are You Listing?</h2>
+
+    <label for="category">Listing Category</label>
+
+    <select id="category" onchange="showCategoryFields()">
+      <option value="">Select category</option>
+      <option value="housing">Housing / Property</option>
+      <option value="land">Land</option>
+      <option value="car">Car / Vehicle</option>
+    </select>
+
+
+    <div id="commonFields">
+
+      <h2 class="section-title">2. Listing Details</h2>
+
+      <label for="listingType">Listing Type</label>
+
+      <select id="listingType">
+        <option value="">Select</option>
+        <option value="sale">For Sale</option>
+        <option value="rent">For Rent</option>
+      </select>
+
+      <label for="title">Listing Title</label>
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Example: Modern 3 Bedroom House for Rent"
+      >
+
+      <label for="location">Location</label>
+
+      <input
+        type="text"
+        id="location"
+        placeholder="Example: Brikama, The Gambia"
+      >
+
+      <label for="price">Price</label>
+
+      <input
+        type="text"
+        id="price"
+        placeholder="Example: D15,000"
+      >
+
+      <label for="description">Description</label>
+
+      <textarea
+        id="description"
+        placeholder="Describe the property, land or vehicle..."
+      ></textarea>
+
+    </div>
+
+
+    <div id="housingFields" style="display:none;">
+
+      <h2 class="section-title">Housing Details</h2>
+
+      <label for="propertyType">Property Type</label>
+
+      <select id="propertyType">
+        <option value="">Select</option>
+        <option>House</option>
+        <option>Apartment</option>
+        <option>Room</option>
+        <option>Shop</option>
+        <option>Office</option>
+        <option>Commercial Property</option>
+        <option>Other</option>
+      </select>
+
+      <div class="row">
+
+        <div>
+          <label for="bedrooms">Bedrooms</label>
+          <input type="number" id="bedrooms" min="0">
+        </div>
+
+        <div>
+          <label for="bathrooms">Bathrooms</label>
+          <input type="number" id="bathrooms" min="0">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="landFields" style="display:none;">
+
+      <h2 class="section-title">Land Details</h2>
+
+      <label for="landSize">Land / Plot Size</label>
+
+      <input
+        type="text"
+        id="landSize"
+        placeholder="Example: 20m × 30m"
+      >
+
+      <label for="documentation">Documentation Status</label>
+
+      <select id="documentation">
+        <option value="">Select</option>
+        <option>Fully Documented</option>
+        <option>Available Documents</option>
+        <option>Under Processing</option>
+        <option>Other</option>
+      </select>
+
+    </div>
+
+
+    <div id="carFields" style="display:none;">
+
+      <h2 class="section-title">Vehicle Details</h2>
+
+      <div class="row">
+
+        <div>
+          <label for="make">Make</label>
+          <input type="text" id="make" placeholder="Toyota">
+        </div>
+
+        <div>
+          <label for="model">Model</label>
+          <input type="text" id="model" placeholder="Corolla">
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div>
+          <label for="year">Year</label>
+          <input type="number" id="year" placeholder="2020">
+        </div>
+
+        <div>
+          <label for="transmission">Transmission</label>
+
+          <select id="transmission">
+            <option value="">Select</option>
+            <option>Automatic</option>
+            <option>Manual</option>
+          </select>
+        </div>
+
+      </div>
+
+      <label for="fuel">Fuel Type</label>
+
+      <select id="fuel">
+        <option value="">Select</option>
+        <option>Petrol</option>
+        <option>Diesel</option>
+        <option>Hybrid</option>
+        <option>Electric</option>
+      </select>
+
+    </div>
+
+
+    <h2 class="section-title">3. Listing Duration</h2>
+
+    <div class="duration-box">
+
+      <div class="duration">
+        <strong>1 Month</strong>
+        Short-term advertising
+      </div>
+
+      <div class="duration">
+        <strong>1 Year</strong>
+        Long-term advertising
+      </div>
+
+      <div class="duration">
+        <strong>Permanent</strong>
+        Until sold, rented or removed
+      </div>
+
+    </div>
+
+
+    <h2 class="section-title">4. Owner Information</h2>
+
+    <label for="ownerName">Full Name</label>
+
+    <input
+      type="text"
+      id="ownerName"
+      placeholder="Your full name"
+    >
+
+    <label for="ownerPhone">Phone / WhatsApp</label>
+
+    <input
+      type="tel"
+      id="ownerPhone"
+      placeholder="+220..."
+    >
+
+
+    <div class="notice">
+      <strong>Important:</strong><br>
+      Listing fees apply. Your listing will be reviewed by Prime Property
+      Solutions before it is published.
+    </div>
+
+
+    <button class="submit-btn" onclick="submitListing()">
+      Submit Listing
+    </button>
+
+  </div>
+
+</div>
+
+
+<footer>
+  <p><strong>Prime Property Solutions</strong></p>
+  <p>WhatsApp: +220 2919682</p>
+  <p>Call: +220 3551745</p>
+  <p>Email: contact@primepropertysolutions.com</p>
+</footer>
+
+
+<script>
+
+function showCategoryFields() {
+
+  const category = document.getElementById("category").value;
+
+  document.getElementById("housingFields").style.display = "none";
+  document.getElementById("landFields").style.display = "none";
+  document.getElementById("carFields").style.display = "none";
+
+  if (category === "housing") {
+    document.getElementById("housingFields").style.display = "block";
+  }
+
+  if (category === "land") {
+    document.getElementById("landFields").style.display = "block";
+  }
+
+  if (category === "car") {
+    document.getElementById("carFields").style.display = "block";
+  }
+}
+
+
+function submitListing() {
+
+  const category = document.getElementById("category").value;
+  const title = document.getElementById("title").value;
+  const location = document.getElementById("location").value;
+
+  if (!category || !title || !location) {
+
+    alert("Please select a category and complete the listing title and location.");
+
+    return;
+  }
+
+  alert(
+    "Thank you! Your listing has been submitted for review. Prime Property Solutions will contact you regarding the listing fee and approval."
+  );
+
+}
+
+</script>
+
+</body>
+  </html>
