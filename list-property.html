@@ -124,7 +124,36 @@
       text-align: center;
       cursor: pointer;
     }
+.duration-option {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: white;
+}
 
+.duration-option:hover {
+  border-color: #d4a017;
+}
+
+.duration-option input {
+  width: auto;
+  accent-color: #0b3d2e;
+}
+
+.duration-option:has(input:checked) {
+  border-color: #d4a017;
+  background: #fff8df;
+}
+
+.duration-option strong {
+  display: block;
+  color: #0b3d2e;
+  margin-bottom: 5px;
+      }
     .duration:hover {
       border-color: #d4a017;
     }
