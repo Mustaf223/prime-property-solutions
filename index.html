@@ -4,33 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Prime Property Solutions | The Gambia</title>
+  <title>Prime Property Solutions | Property, Land & Vehicles</title>
+
+  <meta name="description" content="Prime Property Solutions provides property sales, rentals, property management, land services, surveying, demarcation, vehicle sales and car rental services in The Gambia.">
 
   <style>
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      font-family: Arial, Helvetica, sans-serif;
       color: #222;
+      background: #f6f7f6;
       line-height: 1.6;
-      background: #f7f8f7;
     }
+
+    /* HEADER */
 
     header {
       background: #0b3d2e;
       color: white;
-      padding: 18px 20px;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     .nav-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
       justify-content: space-between;
@@ -39,15 +48,17 @@
     }
 
     .logo {
-      color: #d4a017;
-      font-size: 22px;
+      font-size: 21px;
       font-weight: bold;
+      color: #d4a017;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      align-items: center;
+      gap: 18px;
     }
 
     nav a {
@@ -60,38 +71,53 @@
       color: #d4a017;
     }
 
+    .nav-button {
+      background: #d4a017;
+      color: #0b3d2e !important;
+      padding: 9px 13px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 520px;
+      min-height: 620px;
+      background:
+        linear-gradient(rgba(11,61,46,0.78), rgba(11,61,46,0.78)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
+
+      background-size: cover;
+      background-position: center;
+
       display: flex;
       align-items: center;
       text-align: center;
       color: white;
-      padding: 70px 20px;
-
-      background:
-        linear-gradient(rgba(11,61,46,0.78), rgba(11,61,46,0.78)),
-        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80");
-
-      background-size: cover;
-      background-position: center;
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
       margin: auto;
+      padding: 40px 20px;
     }
 
     .hero h1 {
-      font-size: 45px;
-      margin-bottom: 15px;
+      font-size: 48px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #d4a017;
     }
 
     .hero p {
       font-size: 19px;
-      margin-bottom: 25px;
+      max-width: 750px;
+      margin: 0 auto 30px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -100,69 +126,120 @@
 
     .btn {
       display: inline-block;
-      padding: 13px 22px;
+      padding: 13px 20px;
       border-radius: 7px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .gold-btn {
+    .btn-gold {
       background: #d4a017;
-      color: #111;
-    }
-
-    .white-btn {
-      background: white;
       color: #0b3d2e;
     }
 
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    /* GENERAL */
+
     section {
-      padding: 55px 20px;
+      padding: 70px 20px;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
       color: #0b3d2e;
-      margin-bottom: 12px;
-      font-size: 30px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .section-text {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 35px;
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .services {
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .about-text h3 {
+      color: #0b3d2e;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    /* SERVICES */
+
+    #services {
+      background: white;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .service-card {
-      background: white;
+      background: #f6f7f6;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      border-top: 4px solid #d4a017;
     }
 
     .service-card h3 {
       color: #0b3d2e;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .market {
+    .service-card p {
+      color: #555;
+    }
+
+    /* MARKETPLACE */
+
+    .marketplace {
       background: #0b3d2e;
       color: white;
     }
 
-    .market .section-title {
-      color: #d4a017;
+    .marketplace .section-title h2 {
+      color: white;
+    }
+
+    .marketplace .section-title p {
+      color: #ddd;
     }
 
     .market-grid {
@@ -174,9 +251,14 @@
     .market-card {
       background: white;
       color: #222;
-      padding: 25px;
+      padding: 30px;
       border-radius: 10px;
       text-align: center;
+    }
+
+    .market-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
     }
 
     .market-card h3 {
@@ -184,39 +266,767 @@
       margin-bottom: 10px;
     }
 
-    .market-card a {
-      display: inline-block;
-      margin-top: 12px;
-      background: #d4a017;
-      color: #111;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    /* WHY US */
 
-    .why {
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
     .why-card {
-      background: white;
-      padding: 25px;
-      border-left: 4px solid #d4a017;
-      border-radius: 8px;
+      text-align: center;
+      padding: 25px 15px;
     }
+
+    .why-card h3 {
+      color: #0b3d2e;
+      margin: 10px 0;
+    }
+
+    .why-number {
+      font-size: 35px;
+      color: #d4a017;
+      font-weight: bold;
+    }
+
+    /* CTA */
 
     .cta {
       background: #d4a017;
       text-align: center;
-      padding: 55px 20px;
     }
 
     .cta h2 {
       color: #0b3d2e;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-dark {
+      background: #0b3d2e;
+      color: white;
+    }
+
+    /* CONTACT */
+
+    #contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 25px;
+      background: #f6f7f6;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      color: #0b3d2e;
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      color: #0b3d2e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #082c21;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer h3 {
+      color: #d4a017;
       margin-bottom: 10px;
     }
 
-    .cta
+    footer p {
+      color: #ccc;
+      font-size: 14px;
+      margin: 5px;
+    }
+
+    .footer-links {
+      margin: 18px 0;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .market-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .market-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="nav-container">
+
+    <a href="index.html" class="logo">
+      Prime Property Solutions
+    </a>
+
+    <nav>
+
+      <a href="#home">Home</a>
+
+      <a href="#about">About</a>
+
+      <a href="#services">Services</a>
+
+      <a href="listings.html">Listings</a>
+
+      <a href="#contact">Contact</a>
+
+      <a href="list-property.html" class="nav-button">
+        List With Us
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>
+      Your Property.<br>
+      <span>Our Solution.</span>
+    </h1>
+
+    <p>
+      Prime Property Solutions connects people with houses,
+      apartments, land, shops, vehicles and professional
+      property services across The Gambia.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="listings.html" class="btn btn-gold">
+        View Listings
+      </a>
+
+      <a href="list-property.html" class="btn btn-outline">
+        List Your Property
+      </a>
+
+      <a
+        href="https://wa.me/2202919682"
+        class="btn btn-whatsapp"
+      >
+        WhatsApp Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>About Prime Property Solutions</h2>
+
+      <p>
+        Professional property, land and vehicle solutions
+        designed to make buying, selling, renting and managing
+        assets easier.
+      </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+      <img
+        class="about-image"
+        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80"
+        alt="Modern property"
+      >
+
+
+      <div class="about-text">
+
+        <h3>More Than Just Property</h3>
+
+        <p>
+          Prime Property Solutions provides services for
+          property owners, buyers, renters, landlords,
+          tenants, landowners and vehicle owners.
+        </p>
+
+        <p>
+          Our platform brings together housing, land,
+          commercial property and vehicles while also
+          providing professional field and property services.
+        </p>
+
+        <p>
+          Whether you want to buy, rent, sell, manage,
+          inspect, survey or advertise an asset, we are
+          here to help.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Our Services</h2>
+
+      <p>
+        Professional services for property owners,
+        landowners, buyers, renters and businesses.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Property Sales</h3>
+        <p>
+          Assistance with houses, apartments, shops,
+          commercial properties and other assets.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Property Rental</h3>
+        <p>
+          Find and advertise houses, apartments,
+          rooms, shops and commercial spaces.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Property Management</h3>
+        <p>
+          Professional support for owners who need
+          their properties managed and supervised.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Land Demarcation</h3>
+        <p>
+          Land boundary identification and
+          demarcation support.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Site Survey</h3>
+        <p>
+          Site measurement, location information
+          and survey-related services.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Site Supervision</h3>
+        <p>
+          Field supervision and monitoring of
+          construction and development activities.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Land Documentation</h3>
+        <p>
+          Assistance with land documentation and
+          related property information.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Property Inspection</h3>
+        <p>
+          Property inspection and reporting services
+          for owners and clients.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Vehicle Services</h3>
+        <p>
+          Advertise vehicles for sale or rental
+          through our platform.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- MARKETPLACE -->
+
+<section class="marketplace">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>What Can You Find?</h2>
+
+      <p>
+        Explore different categories available through
+        Prime Property Solutions.
+      </p>
+
+    </div>
+
+
+    <div class="market-grid">
+
+
+      <div class="market-card">
+
+        <div class="market-icon">🏠</div>
+
+        <h3>Housing</h3>
+
+        <p>
+          Houses, apartments, rooms, shops and
+          commercial spaces.
+        </p>
+
+        <br>
+
+        <a href="listings.html" class="btn btn-gold">
+          View Housing
+        </a>
+
+      </div>
+
+
+      <div class="market-card">
+
+        <div class="market-icon">🌍</div>
+
+        <h3>Land</h3>
+
+        <p>
+          Land and plots available for sale and
+          development.
+        </p>
+
+        <br>
+
+        <a href="listings.html" class="btn btn-gold">
+          View Land
+        </a>
+
+      </div>
+
+
+      <div class="market-card">
+
+        <div class="market-icon">🚗</div>
+
+        <h3>Cars & Vehicles</h3>
+
+        <p>
+          Vehicles available for sale or rental.
+        </p>
+
+        <br>
+
+        <a href="listings.html" class="btn btn-gold">
+          View Vehicles
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- WHY CHOOSE US -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Why Choose Us?</h2>
+
+      <p>
+        We aim to make property and asset transactions
+        simpler, clearer and more accessible.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+      <div class="why-card">
+
+        <div class="why-number">01</div>
+
+        <h3>Professional</h3>
+
+        <p>
+          Reliable and organized service.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-number">02</div>
+
+        <h3>Convenient</h3>
+
+        <p>
+          Find services and listings in one place.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-number">03</div>
+
+        <h3>Local Knowledge</h3>
+
+        <p>
+          Services designed around the Gambian market.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-number">04</div>
+
+        <h3>Client Focused</h3>
+
+        <p>
+          We work around the needs of our clients.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- LIST WITH US CTA -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <h2>Have a Property or Vehicle?</h2>
+
+    <p>
+      Advertise your house, apartment, land, shop or vehicle
+      with Prime Property Solutions.
+    </p>
+
+
+    <div class="cta-buttons">
+
+      <!-- THIS GOES TO THE LISTING FORM -->
+
+      <a
+        href="list-property.html"
+        class="btn cta-dark"
+      >
+        List Your Property or Vehicle
+      </a>
+
+
+      <!-- THIS ONE GOES TO WHATSAPP -->
+
+      <a
+        href="https://wa.me/220835422703"
+        class="btn btn-whatsapp"
+      >
+        Ask Us on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Contact Us</h2>
+
+      <p>
+        Ready to buy, rent, sell, manage or advertise?
+        Get in touch with us.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-card">
+
+        <h3>WhatsApp</h3>
+
+        <a href="https://wa.me/220835422703">
+          +220 835422703
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>Call Us</h3>
+
+        <a href="tel:+220835422703">
+          +220 835422703
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>Email</h3>
+
+        <a href="mailto:contact@primepropertysolutions.com">
+          contact@primepropertysolutions.com
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>Prime Property Solutions</h3>
+
+  <p>
+    Property • Land • Vehicles • Management • Surveying
+  </p>
+
+
+  <div class="footer-links">
+
+    <a href="index.html">Home</a>
+
+    <a href="listings.html">Listings</a>
+
+    <a href="list-property.html">
+      List With Us
+    </a>
+
+    <a href="#services">Services</a>
+
+    <a href="#contact">Contact</a>
+
+  </div>
+
+
+  <p>
+    WhatsApp: +220 835422703
+  </p>
+
+  <p>
+    Call: +220 835422703
+  </p>
+
+  <p>
+    contact@primepropertysolutions.com
+  </p>
+
+  <br>
+
+  <p>
+    © 2026 Prime Property Solutions. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+</body>
+</html>
