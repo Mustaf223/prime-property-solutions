@@ -251,7 +251,19 @@
 
 
     <div id="commonFields">
+<div class="fee-box">
 
+  <h2 class="section-title">4. Listing Fee</h2>
+
+  <p>
+    Select your listing duration above to see the applicable fee.
+  </p>
+
+  <div id="listingFee">
+    Listing Fee: <strong>D0</strong>
+  </div>
+
+</div>
       <h2 class="section-title">2. Listing Details</h2>
 
       <label for="listingType">Listing Type</label>
@@ -495,7 +507,74 @@ function submitListing() {
   );
 
 }
+function calculateFee() {
 
+  const category = document.getElementById("category").value;
+  const listingType = document.getElementById("listingType").value;
+  const duration = document.querySelector('input[name="duration"]:checked');
+
+  let fee = 0;
+
+  if (!category || !listingType || !duration) {
+    document.getElementById("listingFee").innerHTML =
+      'Listing Fee: <strong>D0</strong>';
+    return;
+  }
+
+  if (category === "housing" && listingType === "sale") {
+
+    if (duration.value === "1-month") fee = 500;
+    if (duration.value === "1-year") fee = 3600;
+    if (duration.value === "permanent") fee = 3600;
+
+  }
+
+  else if (category === "housing" && listingType === "rent") {
+
+    if (duration.value === "1-month") fee = 250;
+    if (duration.value === "1-year") fee = 1800;
+    if (duration.value === "permanent") fee = 1800;
+
+  }
+
+  else if (category === "land" && listingType === "sale") {
+
+    if (duration.value === "1-month") fee = 500;
+    if (duration.value === "1-year") fee = 3600;
+    if (duration.value === "permanent") fee = 3600;
+
+  }
+
+  else if (category === "car" && listingType === "sale") {
+
+    if (duration.value === "1-month") fee = 300;
+    if (duration.value === "1-year") fee = 1800;
+    if (duration.value === "permanent") fee = 1800;
+
+  }
+
+  else if (category === "car" && listingType === "rent") {
+
+    if (duration.value === "1-month") fee = 150;
+    if (duration.value === "1-year") fee = 1200;
+    if (duration.value === "permanent") fee = 1200;
+
+  }
+
+  document.getElementById("listingFee").innerHTML =
+    'Listing Fee: <strong>D' + fee.toLocaleString() + '</strong>';
+}
+
+
+// Recalculate whenever the customer changes an option
+
+document.getElementById("category").addEventListener("change", calculateFee);
+
+document.getElementById("listingType").addEventListener("change", calculateFee);
+
+document.querySelectorAll('input[name="duration"]').forEach(function(option) {
+  option.addEventListener("change", calculateFee);
+});
 </script>
 
 </body>
