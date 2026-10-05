@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Listings | Prime Property Solutions</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7f6;
+      color: #222;
+    }
+
+    header {
+      background: #0b3d2e;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: #0b3d2e;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .filters {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 35px;
+    }
+
+    .filters h2 {
+      color: #0b3d2e;
+      margin-bottom: 18px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 5px;
+      background: #e8eeeb;
+      color: #0b3d2e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #0b3d2e;
+      color: white;
+    }
+
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .card-image {
+      height: 190px;
+      background: #dfe5e2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #d4a017;
+      color: white;
+      padding: 5px 9px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #0b3d2e;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      color: #666;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #0b3d2e;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp {
+      display: block;
+      text-align: center;
+      background: #25D366;
+      color: white;
+      padding: 11px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      background: white;
+      padding: 45px 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .empty h2 {
+      color: #0b3d2e;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #06291f;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav a {
+        margin: 0 6px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      PRIME PROPERTY SOLUTIONS
+    </div>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="listings.html">Listings</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>Properties & Vehicles</h1>
+
+  <p>
+    Find properties, land and vehicles available for sale or rental.
+  </p>
+
+</section>
+
+
+<div class="container">
+
+  <div class="filters">
+
+    <h2>Browse Listings</h2>
+
+    <div class="filter-buttons">
+
+      <button class="filter-btn active" onclick="filterListings('all')">
+        All
+      </button>
+
+      <button class="filter-btn" onclick="filterListings('housing')">
+        🏠 Housing
+      </button>
+
+      <button class="filter-btn" onclick="filterListings('land')">
+        🌍 Land
+      </button>
+
+      <button class="filter-btn" onclick="filterListings('cars')">
+        🚗 Cars
+      </button>
+
+      <button class="filter-btn" onclick="filterListings('rent')">
+        🔑 For Rent
+      </button>
+
+      <button class="filter-btn" onclick="filterListings('sale')">
+        💰 For Sale
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="listings">
+
+
+    <!-- HOUSING -->
+
+    <div class="card listing housing rent">
+
+      <div class="card-image">
+        🏠
+      </div>
+
+      <div class="card-content">
+
+        <span class="tag">FOR RENT</span>
+
+        <h3>Modern House</h3>
+
+        <p class="location">
+          📍 Location to be provided
+        </p>
+
+        <p class="price">
+          Contact for price
+        </p>
+
+        <a
+          href="https://wa.me/2202919682?text=Hello%20Prime%20Property%20Solutions,%20I%20am%20interested%20in%20the%20Modern%20House."
+          class="whatsapp">
+          WhatsApp Enquiry
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- LAND -->
+
+    <div class="card listing land sale">
+
+      <div class="card-image">
+        🌍
+      </div>
+
+      <div class="card-content">
+
+        <span class="tag">LAND FOR SALE</span>
+
+        <h3>Residential Land</h3>
+
+        <p class="location">
+          📍 Location to be provided
+        </p>
+
+        <p class="price">
+          Contact for price
+        </p>
+
+        <a
+          href="https://wa.me/2202919682?text=Hello%20Prime%20Property%20Solutions,%20I%20am%20interested%20in%20the%20land listing."
+          class="whatsapp">
+          WhatsApp Enquiry
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CAR -->
+
+    <div class="card listing cars rent">
+
+      <div class="card-image">
+        🚗
+      </div>
+
+      <div class="card-content">
+
+        <span class="tag">CAR FOR RENT</span>
+
+        <h3>Vehicle Rental</h3>
+
+        <p class="location">
+          📍 Location to be provided
+        </p>
+
+        <p class="price">
+          Contact for price
+        </p>
+
+        <a
+          href="https://wa.me/2202919682?text=Hello%20Prime%20Property%20Solutions,%20I%20am%20interested%20in%20the%20car rental."
+          class="whatsapp">
+          WhatsApp Enquiry
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="empty">
+
+    <h2>Have a Property or Vehicle to List?</h2>
+
+    <p>
+      Owners can contact Prime Property Solutions to advertise
+      their houses, apartments, land, shops or vehicles.
+    </p>
+
+    <br>
+
+    <a
+      href="https://wa.me/2202919682?text=Hello%20Prime%20Property%20Solutions,%20I%20want%20to%20list%20my%20property%20or vehicle."
+      class="whatsapp">
+      List Your Property or Vehicle
+    </a>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <p>
+    © 2026 Prime Property Solutions. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+function filterListings(category) {
+
+  const listings = document.querySelectorAll(".listing");
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  buttons.forEach(button => {
+    button.classList.remove("active");
+  });
+
+  event.target.classList.add("active");
+
+  listings.forEach(listing => {
+
+    if (category === "all") {
+      listing.style.display = "block";
+    }
+
+    else if (listing.classList.contains(category)) {
+      listing.style.display = "block";
+    }
+
+    else {
+      listing.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+  </html>
