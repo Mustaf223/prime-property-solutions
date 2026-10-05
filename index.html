@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Property Solutions | Property & Land Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7f6;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b3d2e;
+      color: white;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 50, 35, 0.78), rgba(0, 50, 35, 0.78)),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn-primary {
+      background: #d4a017;
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: #0b3d2e;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-text {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 28px 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .service-card h3 {
+      color: #0b3d2e;
+      margin-bottom: 10px;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .why {
+      background: #0b3d2e;
+      color: white;
+    }
+
+    .why .section-title h2 {
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .contact {
+      background: white;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #06291f;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 27px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav a {
+        margin: 0 7px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">PRIME PROPERTY SOLUTIONS</div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Prime Property Solutions</h1>
+
+    <p>
+      Professional property and land services you can trust.
+    </p>
+
+    <a href="#services" class="btn btn-primary">
+      Our Services
+    </a>
+
+    <a href="https://wa.me/2202919682" class="btn btn-whatsapp">
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
+
+    <div class="about-text">
+      <p>
+        Prime Property Solutions provides professional property and land
+        services to individuals, businesses and organizations.
+      </p>
+
+      <br>
+
+      <p>
+        Our services cover property sales, rentals, property management,
+        land demarcation, site surveying, site supervision and land
+        documentation.
+      </p>
+
+      <br>
+
+      <p>
+        Our goal is to provide reliable, transparent and professional
+        solutions for our clients.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional solutions for your property needs.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Property Sales</h3>
+        <p>
+          Assistance with buying and selling properties.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔑</div>
+        <h3>Property Rental</h3>
+        <p>
+          Helping clients find suitable properties for rent.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Property Management</h3>
+        <p>
+          Professional management and oversight of properties.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📍</div>
+        <h3>Land Demarcation</h3>
+        <p>
+          Land boundary identification and demarcation services.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Site Survey</h3>
+        <p>
+          Basic site surveying and land-related field services.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👷</div>
+        <h3>Site Supervision</h3>
+        <p>
+          Monitoring and supervision of construction activities.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Land Documentation</h3>
+        <p>
+          Assistance with property and land documentation processes.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Choose Us?</h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h3>Professional</h3>
+        <p>
+          We aim to provide reliable and professional services.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Transparent</h3>
+        <p>
+          Clear communication and straightforward service.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Client Focused</h3>
+        <p>
+          We put our clients' needs at the center of our work.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Reliable</h3>
+        <p>
+          We work to deliver dependable property solutions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Let's discuss your property needs.</p>
+    </div>
+
+    <div class="contact-box">
+
+      <p><strong>WhatsApp:</strong> +220 291 9682</p>
+
+      <p><strong>Phone:</strong> +220 355 1745</p>
+
+      <p><strong>Email:</strong> contact@primepropertysolutions.com</p>
+
+      <br>
+
+      <a href="https://wa.me/2202919682" class="btn btn-whatsapp">
+        Chat With Us on WhatsApp
+      </a>
+
+      <a href="tel:+2203551745" class="btn btn-primary">
+        Call Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    © 2026 Prime Property Solutions. All Rights Reserved.
+  </p>
+</footer>
+
+<a
+  href="https://wa.me/2202919682"
+  class="floating-whatsapp"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+</body>
+  </html>
